@@ -4,14 +4,29 @@ import java.util.Date;
 
 import org.springframework.stereotype.Component;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+
+@Entity
 public class Person {
+	
+	@Id
+	@GeneratedValue
 	private int id;
 	private String name;
 	private String location;
 	private Date birthDate;
 
-	public Person() {
+	public Person(){
 
+	}
+	
+	public Person(String name, String location, Date birthDate) {
+		super();
+		this.name = name;
+		this.location = location;
+		this.birthDate = birthDate;
 	}
 
 	public Person(int id, String name, String location, Date birthDate) {
